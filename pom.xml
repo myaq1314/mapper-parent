@@ -28,7 +28,7 @@
 
     <groupId>tk.mybatis</groupId>
     <artifactId>mapper-parent</artifactId>
-    <version>5</version>
+    <version>5-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>mapper-parent</name>
@@ -54,7 +54,7 @@
         <developerConnection>scm:git@github.com:abel533/mapper-parent.git</developerConnection>
         <url>git@github.com:abel533/mapper-parent.git</url>
     </scm>
-	
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
@@ -159,11 +159,11 @@
                     </execution>
                 </executions>
             </plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>3.0.0</version>
-			</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.0.0</version>
+            </plugin>
         </plugins>
     </build>
     <profiles>
@@ -175,7 +175,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>2.9</version>
+                        <version>3.3.1</version>
                         <executions>
                             <execution>
                                 <phase>package</phase>
@@ -183,7 +183,8 @@
                                     <goal>jar</goal>
                                 </goals>
                                 <configuration>
-                                    <additionalparam>-Xdoclint:none</additionalparam>
+                                    <!--<additionalparam>-Xdoclint:none</additionalparam>-->
+                                    <doclint>none</doclint>
                                 </configuration>
                             </execution>
                         </executions>
@@ -192,6 +193,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
+                        <version>3.0.1</version>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
